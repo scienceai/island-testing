@@ -1,4 +1,11 @@
 
+function inject (data) {
+  var island = document.createElement('script');
+  island.setAttribute('type', 'application/ld+json');
+  island.textContent = JSON.stringify(data);
+  document.body.appendChild(island);
+}
+
 (function () {
   var data = {
         '@context': 'http://schema.org/',
@@ -11,14 +18,14 @@
         },
         about: ['json-ld']
       }
-    , island = document.createElement('script')
   ;
-  setTimeout(
-    function () {
-      island.setAttribute('type', 'application/ld+json');
-      island.textContent = JSON.stringify(data);
-      document.body.appendChild(island);
-    },
-    0
-  );
+  inject(data);
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'billie.json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status !== 200) return;
+    inject(JSON.parse(xhr.responseText));
+  };
+  xhr.send();
 })();
