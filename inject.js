@@ -19,6 +19,6 @@
       island.textContent = JSON.stringify(data);
       document.body.appendChild(island);
     },
-    5000
+    2500
   );
 })();
