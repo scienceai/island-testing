@@ -3,9 +3,6 @@
   "@type": "ScholarlyArticle",
   "author": {
     "@type":  "Person",
-    "@id":  "http://berjon.com/",
-    "givenName": "Robin",
-    "familyName": "Berjon"
-  },
-  "about": ["json-ld"]
+    "givenName": "Billie"
+  }
 }
