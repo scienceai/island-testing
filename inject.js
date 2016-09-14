@@ -12,7 +12,7 @@
       }
     , island = document.createElement('script')
   ;
-  script.setAttribute('type', 'application/ld+json');
-  script.textContent = JSON.stringify(data);
-  document.body.appendChild(script);
+  island.setAttribute('type', 'application/ld+json');
+  island.textContent = JSON.stringify(data);
+  document.body.appendChild(island);
 })();
