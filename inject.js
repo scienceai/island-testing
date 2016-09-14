@@ -9,6 +9,7 @@
           givenName: 'Robin',
           familyName: 'Berjon',
         },
+        about: ['json-ld']
       }
     , island = document.createElement('script')
   ;
